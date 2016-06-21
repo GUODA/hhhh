@@ -1,0 +1,26 @@
+[
+  {
+    "resource": "artist",
+    "operation": "add",
+    "instance": null,
+    "description": "添加艺术家"
+  },
+  {
+    "resource": "artist",
+    "operation": "delete",
+    "instance": null,
+    "description": "删除艺术家"
+  },
+  {
+    "resource": "artist",
+    "operation": "edit",
+    "instance": null,
+    "description": "修改艺术家"
+  },
+  {
+    "resource": "artist",
+    "operation": "view",
+    "instance": null,
+    "description": "查看艺术家"
+  }
+]

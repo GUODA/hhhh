@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=D:\workspace\eddgit\ydd\lib\kaptcha-2.3.2.jar -DgroupId=com.google.kaptcha -DartifactId=kaptcha -Dversion=2.3.2 -Dpackaging=jar

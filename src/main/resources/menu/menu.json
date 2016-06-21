@@ -1,0 +1,601 @@
+[
+  {
+    "name": "index",
+    "icon": "icon-home",
+    "url": "/admin/welcome",
+    "sort": 1,
+    "text": "首页",
+    "subMenu": null,
+    "resource": "index",
+    "perms": [
+      {
+        "resource": "index",
+        "operation": "*",
+        "instance": "*",
+        "description": "首页"
+      }
+    ]
+  },
+  {
+    "name": "user_manage",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 2,
+    "text": "用户管理",
+    "resource": "user",
+    "subMenu": [
+      {
+        "name": "user_list",
+        "icon": "icon-user",
+        "url": "/admin/user/list",
+        "sort": 1,
+        "text": "用户列表",
+        "resource": "user",
+        "perms": [
+          {
+            "resource": "user",
+            "operation": "visit",
+            "instance": null,
+            "description": "用户列表"
+          },
+          {
+            "resource": "user",
+            "operation": "add",
+            "instance": null,
+            "description": "添加用户"
+          },
+          {
+            "resource": "user",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除用户"
+          },
+          {
+            "resource": "user",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改用户"
+          },
+          {
+            "resource": "user",
+            "operation": "view",
+            "instance": null,
+            "description": "查看用户"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "role_manage",
+    "icon": "icon-role",
+    "url": "javascript:;",
+    "sort": 3,
+    "text": "角色管理",
+    "resource": "role",
+    "subMenu": [
+      {
+        "name": "role_list",
+        "icon": "icon-role",
+        "url": "/admin/role/list",
+        "sort": 1,
+        "text": "角色列表",
+        "resource": "role",
+        "perms": [
+          {
+            "resource": "role",
+            "operation": "visit",
+            "instance": null,
+            "description": "角色列表"
+          },
+          {
+            "resource": "role",
+            "operation": "add",
+            "instance": null,
+            "description": "添加角色"
+          },
+          {
+            "resource": "role",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除角色"
+          },
+          {
+            "resource": "role",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改角色"
+          },
+          {
+            "resource": "role",
+            "operation": "view",
+            "instance": null,
+            "description": "查看角色"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "user_message_manage",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 4,
+    "text": "用户信息管理",
+    "resource": "user_message",
+    "subMenu": [
+      {
+        "name": "artist_list",
+        "icon": "icon-role",
+        "url": "/admin/artist/list",
+        "sort": 1,
+        "text": "用户信息查看",
+        "resource": "user_message",
+        "perms": [
+          {
+            "resource": "user_message",
+            "operation": "add",
+            "instance": null,
+            "description": "添加用户信息"
+          },
+          {
+            "resource": "user_message",
+            "operation": "get",
+            "instance": null,
+            "description": "获取用户信息"
+          },
+          {
+            "resource": "user_message",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除用户信息"
+          },
+          {
+            "resource": "user_message",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改用户信息"
+          },
+          {
+            "resource": "user_message",
+            "operation": "view",
+            "instance": null,
+            "description": "查看用户信息"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "devicetype",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 5,
+    "text": "设备分类管理",
+    "resource": "devicetype",
+    "subMenu": [
+      {
+        "name": "devicetype",
+        "icon": "icon-user",
+        "url": "/admin/devicetype/list",
+        "sort": 1,
+        "text": "设备分类列表",
+        "resource": "devicetype",
+        "perms": [
+          {
+            "resource": "devicetype",
+            "operation": "list",
+            "instance": null,
+            "description": "设备列表分类"
+          },
+          {
+            "resource": "devicetype",
+            "operation": "add",
+            "instance": null,
+            "description": "添加设备分类"
+          },
+          {
+            "resource": "devicetype",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除设备分类"
+          },
+          {
+            "resource": "devicetype",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改设备分类"
+          },
+          {
+            "resource": "devicetype",
+            "operation": "view",
+            "instance": null,
+            "description": "查看设备分类"
+          }
+        ],
+        "subMenu": null
+      },
+      {
+        "name": "device",
+        "icon": "icon-user",
+        "url": "javascript:;",
+        "sort": 6,
+        "text": "设备管理",
+        "resource": "device",
+        "subMenu": [
+          {
+            "name": "order_list",
+            "icon": "icon-user",
+            "url": "/admin/order/list",
+            "sort": 1,
+            "text": "设备列表",
+            "resource": "device",
+            "perms": [
+              {
+                "resource": "device",
+                "operation": "visit",
+                "instance": null,
+                "description": "设备列表"
+              },
+              {
+                "resource": "device",
+                "operation": "delete",
+                "instance": null,
+                "description": "删除设备"
+              },
+              {
+                "resource": "device",
+                "operation": "edit",
+                "instance": null,
+                "description": "修改设备"
+              },
+              {
+                "resource": "device",
+                "operation": "view",
+                "instance": null,
+                "description": "查看设备"
+              }
+            ],
+            "subMenu": null
+          },
+          {
+            "name": "competdate",
+            "icon": "icon-user",
+            "url": "/admin/evaluate/list",
+            "sort": 7,
+            "text": "比赛管理",
+            "resource": "competdate",
+            "perms": [
+              {
+                "resource": "competdate",
+                "operation": "visit",
+                "instance": null,
+                "description": "比赛列表"
+              },
+              {
+                "resource": "competdate",
+                "operation": "delete",
+                "instance": null,
+                "description": "删除比赛"
+              },
+              {
+                "resource": "competdate",
+                "operation": "edit",
+                "instance": null,
+                "description": "修改比赛"
+              },
+              {
+                "resource": "competdate",
+                "operation": "view",
+                "instance": null,
+                "description": "查看比赛"
+              }
+            ],
+            "subMenu": null
+          }
+        ]
+      },
+      {
+        "name": "projecttype_list",
+        "icon": "icon-role",
+        "url": "/admin/property_category/list",
+        "sort": 8,
+        "text": "项目类别列表",
+        "resource": "projecttype",
+        "perms": [
+          {
+            "resource": "projecttype",
+            "operation": "visit",
+            "instance": null,
+            "description": "项目类别列表"
+          },
+          {
+            "resource": "projecttype",
+            "operation": "add",
+            "instance": null,
+            "description": "添加项目类别"
+          },
+          {
+            "resource": "projecttype",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除项目类别"
+          },
+          {
+            "resource": "projecttype",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改项目类别"
+          },
+          {
+            "resource": "projecttype",
+            "operation": "view",
+            "instance": null,
+            "description": "查看项目类别"
+          }
+        ],
+        "subMenu": null
+      },
+
+      {
+        "name": "property_list",
+        "icon": "icon-role",
+        "url": "/admin/property/list",
+        "sort": 9,
+        "text": "项目列表",
+        "resource": "property",
+        "perms": [
+          {
+            "resource": "property",
+            "operation": "visit",
+            "instance": null,
+            "description": "项目列表"
+          },
+          {
+            "resource": "property",
+            "operation": "add",
+            "instance": null,
+            "description": "添加项目"
+          },
+          {
+            "resource": "property",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除项目"
+          },
+          {
+            "resource": "property",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改项目"
+          },
+          {
+            "resource": "property",
+            "operation": "view",
+            "instance": null,
+            "description": "查看项目"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "ceitinfo",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 10,
+    "text": "信息管理",
+    "resource": "ceitinfo",
+    "subMenu": [
+      {
+        "name": "sku_list",
+        "icon": "icon-user",
+        "url": "/admin/sku/visit",
+        "sort": 1,
+        "text": "信息列表",
+        "resource": "ceitinfo",
+        "perms": [
+          {
+            "resource": "ceitinfo",
+            "operation": "add",
+            "instance": null,
+            "description": "添加信息"
+          },
+          {
+            "resource": "ceitinfo",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除信息"
+          },
+          {
+            "resource": "ceitinfo",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改信息"
+          },
+          {
+            "resource": "ceitinfo",
+            "operation": "view",
+            "instance": null,
+            "description": "查看信息"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "activity",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 11,
+    "text": "活动管理",
+    "resource": "activity",
+    "subMenu": [
+      {
+        "name": "message_list",
+        "icon": "icon-user",
+        "url": "/admin/activity/list",
+        "sort": 1,
+        "text": "活动列表",
+        "resource": "activity",
+        "perms": [
+          {
+            "resource": "activity",
+            "operation": "visit",
+            "instance": null,
+            "description": "活动列表"
+          },
+          {
+            "resource": "activity",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除活动"
+          },
+          {
+            "resource": "activity",
+            "operation": "add",
+            "instance": null,
+            "description": "添加活动"
+          },
+          {
+            "resource": "activity",
+            "operation": "view",
+            "instance": null,
+            "description": "查看活动"
+          }
+        ],
+        "subMenu": null
+      },
+      {
+        "name": "account_list",
+        "icon": "icon-user",
+        "url": "/admin/account_message/list",
+        "sort": 12,
+        "text": "账号管理",
+        "resource": "account",
+        "perms": [
+          {
+            "resource": "account",
+            "operation": "visit",
+            "instance": null,
+            "description": "留言列表"
+          },
+          {
+            "resource": "account",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除留言"
+          },
+          {
+            "resource": "account",
+            "operation": "view",
+            "instance": null,
+            "description": "查看留言"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+  {
+    "name": "webtype",
+    "icon": "icon-user",
+    "url": "javascript:;",
+    "sort": 13,
+    "text": "技术网站分类管理",
+    "resource": "webtype",
+    "subMenu": [
+      {
+        "name": "devicetype",
+        "icon": "icon-user",
+        "url": "/admin/webtype/list",
+        "sort": 1,
+        "text": "技术网站分类列表",
+        "resource": "devicetype",
+        "perms": [
+          {
+            "resource": "webtype",
+            "operation": "list",
+            "instance": null,
+            "description": "技术网站列表分类"
+          },
+          {
+            "resource": "webtype",
+            "operation": "add",
+            "instance": null,
+            "description": "添加技术网站分类"
+          },
+          {
+            "resource": "webtype",
+            "operation": "delete",
+            "instance": null,
+            "description": "删除技术网站分类"
+          },
+          {
+            "resource": "webtype",
+            "operation": "edit",
+            "instance": null,
+            "description": "修改技术网站分类"
+          },
+          {
+            "resource": "webtype",
+            "operation": "view",
+            "instance": null,
+            "description": "查看技术网站分类"
+          }
+        ],
+        "subMenu": null
+      }
+    ]
+  },
+      {
+        "name": "web",
+        "icon": "icon-user",
+        "url": "javascript:;",
+        "sort": 14,
+        "text": "技术网站管理",
+        "resource": "web",
+        "subMenu": [
+          {
+            "name": "order_list",
+            "icon": "icon-user",
+            "url": "/admin/order/list",
+            "sort": 1,
+            "text": "技术网站",
+            "resource": "web",
+            "perms": [
+              {
+                "resource": "web",
+                "operation": "visit",
+                "instance": null,
+                "description": "技术网站列表"
+              },
+              {
+                "resource": "web",
+                "operation": "delete",
+                "instance": null,
+                "description": "删除技术网站"
+              },
+              {
+                "resource": "web",
+                "operation": "edit",
+                "instance": null,
+                "description": "修改技术网站"
+              },
+              {
+                "resource": "web",
+                "operation": "view",
+                "instance": null,
+                "description": "查看技术网站"
+              }
+            ],
+            "subMenu": null
+          }
+        ]
+      }
+]

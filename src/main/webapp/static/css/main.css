@@ -1,0 +1,9 @@
+.labels{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: -130px;
+    color: #fff;
+}
+.labels span.text-muted{
+    color: #fff;
+}

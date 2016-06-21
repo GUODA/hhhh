@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.PermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.model.Permission" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="types" property="types" jdbcType="INTEGER" />
+    <result column="resourse" property="resourse" jdbcType="VARCHAR" />
+    <result column="operation" property="operation" jdbcType="VARCHAR" />
+    <result column="instance" property="instance" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="resoursePerm" property="resourseperm" jdbcType="BIT" />
+    <result column="systemPerm" property="systemperm" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, types, resourse, operation, instance, description, resoursePerm, systemPerm
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from permission
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getPermission" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM permission p
+    WHERE
+    <if test="#{0}!=null">
+      p.resourse=#{0} AND
+    </if>
+    <if test="#{1}!=null">
+      p.operation=#{1} AND
+    </if>
+    <if test="#{2}!=null">
+      p.instance=#{2} AND p.resourseperm=#{3} AND p.systemperm=#{4}
+    </if>
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from permission
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.demo.model.Permission" >
+    insert into permission (id, types, resourse, 
+      operation, instance, description, 
+      resoursePerm, systemPerm)
+    values (#{id,jdbcType=INTEGER}, #{types,jdbcType=INTEGER}, #{resourse,jdbcType=VARCHAR}, 
+      #{operation,jdbcType=VARCHAR}, #{instance,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{resourseperm,jdbcType=BIT}, #{systemperm,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.model.Permission" >
+    insert into permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="types != null" >
+        types,
+      </if>
+      <if test="resourse != null" >
+        resourse,
+      </if>
+      <if test="operation != null" >
+        operation,
+      </if>
+      <if test="instance != null" >
+        instance,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="resourseperm != null" >
+        resoursePerm,
+      </if>
+      <if test="systemperm != null" >
+        systemPerm,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="types != null" >
+        #{types,jdbcType=INTEGER},
+      </if>
+      <if test="resourse != null" >
+        #{resourse,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null" >
+        #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="instance != null" >
+        #{instance,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resourseperm != null" >
+        #{resourseperm,jdbcType=BIT},
+      </if>
+      <if test="systemperm != null" >
+        #{systemperm,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.model.Permission" >
+    update permission
+    <set >
+      <if test="types != null" >
+        types = #{types,jdbcType=INTEGER},
+      </if>
+      <if test="resourse != null" >
+        resourse = #{resourse,jdbcType=VARCHAR},
+      </if>
+      <if test="operation != null" >
+        operation = #{operation,jdbcType=VARCHAR},
+      </if>
+      <if test="instance != null" >
+        instance = #{instance,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="resourseperm != null" >
+        resoursePerm = #{resourseperm,jdbcType=BIT},
+      </if>
+      <if test="systemperm != null" >
+        systemPerm = #{systemperm,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.model.Permission" >
+    update permission
+    set types = #{types,jdbcType=INTEGER},
+      resourse = #{resourse,jdbcType=VARCHAR},
+      operation = #{operation,jdbcType=VARCHAR},
+      instance = #{instance,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      resoursePerm = #{resourseperm,jdbcType=BIT},
+      systemPerm = #{systemperm,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

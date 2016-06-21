@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.demo.dao.RoleMapper" >
+  <resultMap id="BaseResultMap" type="com.demo.model.Role" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="roleName" property="rolename" jdbcType="VARCHAR" />
+    <result column="createDate" property="createdate" jdbcType="TIMESTAMP" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="isDelete" property="isdelete" jdbcType="TINYINT" />
+    <result column="sort" property="sort" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="TINYINT" />
+    <result column="system" property="system" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, roleName, createDate, description, isDelete, sort, status, system
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from role
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="getRoleByName" resultMap="BaseResultMap" parameterType="String">
+    SELECT
+    <include refid="Base_Column_List"/>
+    from role
+    where roleName=#{roleName}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from role
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.demo.model.Role" >
+    insert into role (id, roleName, createDate, 
+      description, isDelete, sort, 
+      status, system)
+    values (#{id,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR}, #{createdate,jdbcType=TIMESTAMP}, 
+      #{description,jdbcType=VARCHAR}, #{isdelete,jdbcType=TINYINT}, #{sort,jdbcType=BIGINT}, 
+      #{status,jdbcType=TINYINT}, #{system,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.demo.model.Role" >
+    insert into role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="rolename != null" >
+        roleName,
+      </if>
+      <if test="createdate != null" >
+        createDate,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="isdelete != null" >
+        isDelete,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="system != null" >
+        system,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rolename != null" >
+        #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        #{isdelete,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=TINYINT},
+      </if>
+      <if test="system != null" >
+        #{system,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.demo.model.Role" >
+    update role
+    <set >
+      <if test="rolename != null" >
+        roleName = #{rolename,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        createDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="isdelete != null" >
+        isDelete = #{isdelete,jdbcType=TINYINT},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=TINYINT},
+      </if>
+      <if test="system != null" >
+        system = #{system,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.demo.model.Role" >
+    update role
+    set roleName = #{rolename,jdbcType=VARCHAR},
+      createDate = #{createdate,jdbcType=TIMESTAMP},
+      description = #{description,jdbcType=VARCHAR},
+      isDelete = #{isdelete,jdbcType=TINYINT},
+      sort = #{sort,jdbcType=BIGINT},
+      status = #{status,jdbcType=TINYINT},
+      system = #{system,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
